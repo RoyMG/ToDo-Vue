@@ -27,25 +27,9 @@
 
 <body class="container">
     <div id="app" class="jumbotron">
-        <h2>{{ titulo }}</h2>
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Escribe una tarea" v-model="nuevaTarea"
-                v-on:keyup.enter="agregarTarea">
-            <span class="input-group-btn">
-                <button type="button" class="btn btn-primary" v-on:click="agregarTarea">Agregar</button>
-            </span>
-        </div>
-        <ul class="list-group">
-            <li v-for="(tarea,indice) of tareas" class="list-group-item" v-bind:class="{terminada : tarea.terminada}">
-                {{tarea.texto}}
-                <span class="pull-right">
-                    <button type="button" class="btn btn-xs btn-success glyphicon glyphicon-ok"
-                        v-on:click="tarea.terminada = !tarea.terminada"></button>
-                    <button type="button" class="btn btn-xs btn-danger glyphicon glyphicon-remove"
-                        v-on:click="borrar(indice)"></button>
-                </span>
-            </li>
-        </ul>
+        <titulo></titulo>
+        <nueva-tarea></nueva-tarea>
+        <lista-de-tareas></lista-de-tareas>
     </div>
     <script src="vue.js"></script>
 </body>
